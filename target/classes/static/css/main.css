@@ -1,0 +1,127 @@
+#filterContent {
+    margin-top: 1%;
+}
+
+header {
+    background-color: #0093c4;
+}
+
+#footer {
+    background-color: #0093c4;
+    height: 100%;
+}
+
+.nav-link {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+#filterButton {
+    background-color: #4fc3f7;
+    color: white;
+    border-radius: 0;
+    border: 0;
+}
+
+#filter {
+    background-color: #0093c4;
+    color: white;
+    border-radius: 0;
+    border: 0;
+}
+
+#footerButton {
+    margin-right: 2px;
+}
+
+#pageNumber {
+    background-color: #0093c4;
+    border-radius: 0;
+    color: white;
+}
+
+
+#load {
+    background-color: white;
+}
+
+#containerCard {
+    padding-bottom: 100px;
+    background-color: white;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#rowPhoto {
+    background-color: white;
+}
+
+#rowDescription {
+    background-color: white;
+}
+
+#rowBuy {
+    background-color: blue;
+}
+
+#photo {
+    background-color: white;
+    border: 0;
+}
+
+#logo {
+    display: inline;
+    position: relative;
+    font: 40px Helvetica, Sans-Serif;
+    letter-spacing: -2px;
+    color: white;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    outline: 3px solid white;
+    text-decoration: none;
+}
+
+#logo:focus {
+    outline: 3px solid #4fc3f7;
+}
+
+#basket {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: red;
+    height: 40px;
+    width: 40px
+}
+
+#addToBasket {
+    background-color: #4fc3f7;
+    color: white;
+    border-radius: 0;
+    border: 0;
+}
+
+#basketRow {
+    height: 150px;
+    margin: 10px;
+    border: 1px solid gray;
+    padding: 20px;
+}
+
+#basketRowLast {
+    height: 30px;
+    margin: 10px;
+    padding: 20px;
+    margin-bottom: 200px;
+}
+
+#imageLaptopBasket {
+    height: 120px;
+    width: auto;
+}
+
+
+

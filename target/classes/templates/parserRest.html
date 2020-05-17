@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Content to parse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+Put your url: <br>
+<form method="post" action="/">
+    <input name="url">
+    <button>Submit</button>
+</form>
+<br>
+Info:
+<br>
+<p th:text="${characteristics?.get('model')}"/>
+<p th:text="${characteristics?.get('manufacturer')}"/>
+<p th:text="${characteristics?.get('price')}"/>
+<p th:text="${characteristics?.get('quantity')}"/>
+<p th:text="${characteristics?.get('processor')}"/>
+<p th:text="${characteristics?.get('diagonal')}"/>
+<p th:text="${characteristics?.get('resolution')}"/>
+<p th:text="${characteristics?.get('display')}"/>
+<p th:text="${characteristics?.get('laptopRamSize')}"/>
+<p th:text="${characteristics?.get('laptopRamType')}"/>
+<p th:text="${characteristics?.get('laptopStorageType')}"/>
+<p th:text="${characteristics?.get('laptopStorageSize')}"/>
+<br>
+<p th:each="photo : ${photos}">
+    <span th:text="${photo.toString()}"/>
+</p>
+
+</body>
+</html>
