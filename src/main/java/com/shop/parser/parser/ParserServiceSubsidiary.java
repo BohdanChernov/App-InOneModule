@@ -77,6 +77,7 @@ public class ParserServiceSubsidiary {
 //        Pattern ptrn9 = Pattern.compile("\\w[^\\₴]*");
 //        Matcher matcher9 = ptrn9.matcher(priceToParse.text());
 
+        System.out.println(priceToParse);
         Pattern ptrn9 = Pattern.compile("productPriceLocal:\\d");
         Matcher matcher9 = ptrn9.matcher(priceToParse);
 
