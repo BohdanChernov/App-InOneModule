@@ -208,7 +208,7 @@ public class ParserServiceSubsidiary {
                 e.printStackTrace();
             }
 
-            driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
+//            driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
             js.executeScript("window.scrollBy(0,500)");
         }
 
