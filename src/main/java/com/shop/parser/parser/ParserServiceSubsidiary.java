@@ -203,12 +203,12 @@ public class ParserServiceSubsidiary {
 
         for (int i = 0; i < 25; i++) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);
+            driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
             js.executeScript("window.scrollBy(0,500)");
         }
 
