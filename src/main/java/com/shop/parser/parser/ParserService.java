@@ -43,6 +43,8 @@ public class ParserService {
             e.printStackTrace();
         }
 
+        System.out.println("LAPTOP:" + laptop);
+
         return laptop;
     }
 

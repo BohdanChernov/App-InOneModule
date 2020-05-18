@@ -37,6 +37,8 @@ public class ParserServiceSubsidiary {
     public String findModel() {
         String model = "no information";
         Elements modelToParse = document.select("span.product-tabs__heading_color_gray");
+        System.out.println("HERE");
+        System.out.println(modelToParse);
         System.out.println(modelToParse.text());
         Pattern ptrn11 = Pattern.compile("^Ноутбук\\s\\w*");
         Matcher matcher11 = ptrn11.matcher(modelToParse.text());
@@ -59,6 +61,8 @@ public class ParserServiceSubsidiary {
         if (matcher9.find()) {
             price = matcher9.group(0).trim().replace(" ", "");
         }
+
+        System.out.println("PRICE: " + price);
         return price;
     }
 
@@ -70,6 +74,8 @@ public class ParserServiceSubsidiary {
         if (matcher1.find()) {
             displayDiagonal = matcher1.group(0).replace("\"", "");
         }
+
+        System.out.println("DIAGONAL: " + displayDiagonal);
         return displayDiagonal;
     }
 
@@ -81,6 +87,8 @@ public class ParserServiceSubsidiary {
         if (matcher2.find()) {
             displayResolution = matcher2.group(0);
         }
+
+        System.out.println("RESOLUTION: "+ displayResolution);
         return displayResolution;
     }
 
@@ -92,6 +100,8 @@ public class ParserServiceSubsidiary {
         if (matcher8.find()) {
             displayType = matcher8.group(0).trim();
         }
+
+        System.out.println("DISPLAYTYPE: " + displayType);
         return displayType;
     }
 
@@ -103,6 +113,8 @@ public class ParserServiceSubsidiary {
         if (matcher10.find()) {
             manufacturer = matcher10.group(0);
         }
+
+        System.out.println("MANUFACTURER: " + manufacturer);
         return manufacturer;
     }
 
@@ -114,6 +126,8 @@ public class ParserServiceSubsidiary {
         if (matcher3.find()) {
             processorType = matcher3.group(0).trim();
         }
+
+        System.out.println("PROCESSOR: " + processorType);
         return processorType;
     }
 
@@ -125,6 +139,8 @@ public class ParserServiceSubsidiary {
         if (matcher4.find()) {
             ramSize = matcher4.group(0);
         }
+
+        System.out.println("RAMSIZE: " + ramSize);
         return ramSize;
     }
 
@@ -136,6 +152,8 @@ public class ParserServiceSubsidiary {
         if (matcher7.find()) {
             ramType = matcher7.group(0);
         }
+
+        System.out.println("RAMTYPE: " + ramType);
         return ramType;
     }
 
@@ -147,6 +165,8 @@ public class ParserServiceSubsidiary {
         if (matcher6.find()) {
             storageSize = matcher6.group(0);
         }
+
+        System.out.println("STORAGESIZE: " + storageSize);
         return storageSize;
     }
 
@@ -158,6 +178,8 @@ public class ParserServiceSubsidiary {
         if (matcher5.find()) {
             storageType = matcher5.group(0).trim();
         }
+
+        System.out.println("STORAGETYPE: " + storageType);
         return storageType;
     }
 
