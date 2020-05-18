@@ -268,11 +268,11 @@ public class ParserServiceSubsidiary {
         System.out.println();
         System.out.println();
         for (WebElement webElement : checkList) {
-            System.out.println(webElement.getText());
+            System.out.println(webElement.getAttribute("src"));
         }
 
-        System.out.println(checkList.toString());
-        System.out.println(list.toString());
+//        System.out.println(checkList.toString());
+//        System.out.println(list.toString());
         System.out.println();
         System.out.println();
         System.out.println();
