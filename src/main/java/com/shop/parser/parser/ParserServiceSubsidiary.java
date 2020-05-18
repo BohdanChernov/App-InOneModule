@@ -246,7 +246,10 @@ public class ParserServiceSubsidiary {
         }
 
         List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
-        List<WebElement> checkList = driver.findElements(By.tagName("html"));
+
+
+
+        WebElement checkList = driver.findElement(By.tagName("html"));
 
         System.out.println();
         System.out.println();
@@ -257,9 +260,11 @@ public class ParserServiceSubsidiary {
         System.out.println();
         System.out.println();
         System.out.println();
-        for (WebElement webElement : checkList) {
-            System.out.println(webElement.getText());
-        }
+//        for (WebElement webElement : checkList) {
+//            System.out.println(webElement.getText());
+//        }
+
+        System.out.println(checkList.toString());
         System.out.println();
         System.out.println();
         System.out.println();
