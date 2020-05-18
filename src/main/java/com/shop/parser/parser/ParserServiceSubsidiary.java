@@ -38,15 +38,9 @@ public class ParserServiceSubsidiary {
         String model = "no information";
 //        Elements modelToParse = document.select("span.product-tabs__heading_color_gray");
         Elements modelToParse = document.select("h2.detail-title");
-        System.out.println("DOCUMENT:!!!!");
-//        System.out.println(document);
-//        System.out.println("HERE");
-        System.out.println(modelToParse);
-        System.out.println(modelToParse.text());
         Pattern ptrn11 = Pattern.compile("^Ноутбук\\s\\w*");
         Matcher matcher11 = ptrn11.matcher(modelToParse.text());
         if (matcher11.find()) {
-            System.out.println("INSIDE");
             String toRemove = matcher11.group(0);
             System.out.println(toRemove);
             model = modelToParse.text().replace(toRemove, "").replace(" Суперцена!!!", "").trim();
@@ -64,6 +58,8 @@ public class ParserServiceSubsidiary {
         if (matcher9.find()) {
             price = matcher9.group(0).trim().replace(" ", "");
         }
+
+        System.out.println(document);
 
         System.out.println("PRICE: " + price);
         return price;
@@ -91,7 +87,7 @@ public class ParserServiceSubsidiary {
             displayResolution = matcher2.group(0);
         }
 
-        System.out.println("RESOLUTION: "+ displayResolution);
+        System.out.println("RESOLUTION: " + displayResolution);
         return displayResolution;
     }
 
@@ -130,8 +126,6 @@ public class ParserServiceSubsidiary {
             processorType = matcher3.group(0).trim();
         }
 
-        System.out.println(processor);
-        System.out.println(processor.text());
         System.out.println("PROCESSOR: " + processorType);
         return processorType;
     }
@@ -210,7 +204,6 @@ public class ParserServiceSubsidiary {
 //        WebDriver driver = new RemoteWebDriver(url, options);
 
 
-
         // START OF TEST CODE
 
 //        String GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/google-chrome";
@@ -222,7 +215,6 @@ public class ParserServiceSubsidiary {
         WebDriver driver = new ChromeDriver(options);
 
         // END OF TEST CODE
-
 
 
         driver.manage().window().maximize();
