@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -159,7 +160,8 @@ public class ParserServiceSubsidiary {
         List<String> pathes = new ArrayList<>();
 
 //        System.setProperty("webdriver.chrome.driver", "http://selenium:4444/wd/hub");
-        System.setProperty("webdriver.chrome.driver", "http://localhost:4444/wd/hub");
+//        System.setProperty("webdriver.chrome.driver", "http://localhost:4444/wd/hub");
+        System.setProperty("webdriver.chrome.driver", "/app/.chromedriver/bin/chromedriver");
 
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("profile.default_content_setting_values.notifications", 2);
@@ -172,7 +174,11 @@ public class ParserServiceSubsidiary {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        WebDriver driver = new RemoteWebDriver(url, options);
+
+
+//        WebDriver driver = new RemoteWebDriver(url, options);
+
+        WebDriver driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
 
