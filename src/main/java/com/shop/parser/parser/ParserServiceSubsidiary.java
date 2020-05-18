@@ -41,10 +41,13 @@ public class ParserServiceSubsidiary {
         Pattern ptrn11 = Pattern.compile("^Ноутбук\\s\\w*");
         Matcher matcher11 = ptrn11.matcher(modelToParse.text());
         if (matcher11.find()) {
+            System.out.println("INSIDE");
             String toRemove = matcher11.group(0);
             System.out.println(toRemove);
             model = modelToParse.text().replace(toRemove, "").replace(" Суперцена!!!", "").trim();
         }
+
+        System.out.println("MODEL:" + model);
         return model;
     }
 
@@ -170,7 +173,6 @@ public class ParserServiceSubsidiary {
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
 
-        System.out.println("LOGSYSTEM: 1");
         URL url = null;
         try {
 //            url = new URL("http://selenium:4444/wd/hub");
