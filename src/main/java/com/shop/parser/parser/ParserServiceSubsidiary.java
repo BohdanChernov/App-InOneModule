@@ -44,7 +44,7 @@ public class ParserServiceSubsidiary {
         Matcher matcher11 = ptrn11.matcher(modelToParse.text());
         if (matcher11.find()) {
             String toRemove = matcher11.group(0);
-            model = modelToParse.text().replace(toRemove, "").replace(" Суперцена!!!", "").trim();
+            model = modelToParse.text().replace(toRemove, "").replace(" Суперцена!!!", "").trim().replaceAll("\"", "");
         }
 
         return model;
