@@ -54,11 +54,19 @@ public class ParserService {
         List<String> photos = parserService.findPhotos();
 
         List<LaptopPhoto> laptopPhotos = new ArrayList<>();
-        photos.forEach(s -> {
-            LaptopPhoto photo = new LaptopPhoto();
-            photo.setLocation(s);
-            laptopPhotos.add(photo);
-        });
+        for (int i = 0; i < photos.size(); i++) {
+            if (i != 0) {
+                LaptopPhoto photo = new LaptopPhoto();
+                photo.setLocation(photos.get(i));
+                laptopPhotos.add(photo);
+            }
+        }
+
+//        photos.forEach(s -> {
+//            LaptopPhoto photo = new LaptopPhoto();
+//            photo.setLocation(s);
+//            laptopPhotos.add(photo);
+//        });
 
         return laptopPhotos;
     }
