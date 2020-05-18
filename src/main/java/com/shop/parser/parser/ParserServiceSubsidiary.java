@@ -273,6 +273,7 @@ public class ParserServiceSubsidiary {
 
         driver.close();
 
+        System.out.println(pathes);
         return pathes;
     }
 }
