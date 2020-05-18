@@ -62,21 +62,20 @@ public class ParserServiceSubsidiary {
 
 
         String priceToParse = null;
-        for (Element element :scriptElements ){
+        for (Element element : scriptElements) {
             for (DataNode node : element.dataNodes()) {
                 String string = node.getWholeData();
 //                System.out.println(string);
 //                System.out.println();
 //                System.out.println();
 //                System.out.println("--------------------------------------------------------");
-                if (string.contains("productPriceLocal")){
+                if (string.contains("productPriceLocal")) {
                     priceToParse = string;
                     break;
                 }
 
             }
         }
-
 
 
 //        Elements priceToParse = document.select("p.product-carriage__price");
@@ -117,10 +116,16 @@ public class ParserServiceSubsidiary {
     public String findDisplayResolution() {
         String displayResolution = "no information";
         Elements diagonalAndResolution = document.select("a[href*=20861]");
+        System.out.println("CSSSSSSSSSSSSSSSSSSSSSSSSSSSS" + diagonalAndResolution.text());
         Pattern ptrn2 = Pattern.compile("\\d*[x]\\d*");
+        Pattern ptrn3 = Pattern.compile("\\d*[х]\\d*");
         Matcher matcher2 = ptrn2.matcher(diagonalAndResolution.text());
+        Matcher matcher3 = ptrn3.matcher(diagonalAndResolution.text());
         if (matcher2.find()) {
             displayResolution = matcher2.group(0);
+        } else {
+            if (matcher3.find())
+                displayResolution = matcher3.group(0);
         }
 
         System.out.println("RESOLUTION: " + displayResolution);
