@@ -56,7 +56,7 @@ public class ParserController {
         List<String> laptopArray = Arrays.asList(laptopLinks);
 
         laptopArray.forEach(s -> {
-            if(!s.equals("")){
+            if (!s.equals("")) {
                 parseLaptop(s);
             }
         });
@@ -95,7 +95,6 @@ public class ParserController {
             daoramType.save(laptop.getRamType());
             daoStorageSize.save(laptop.getStorageSize());
             daoStorageType.save(laptop.getStorageType());
-
 
             daoLaptopInterface.save(laptop);
 

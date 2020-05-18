@@ -37,10 +37,12 @@ public class ParserServiceSubsidiary {
     public String findModel() {
         String model = "no information";
         Elements modelToParse = document.select("span.product-tabs__heading_color_gray");
+        System.out.println(modelToParse.text());
         Pattern ptrn11 = Pattern.compile("^Ноутбук\\s\\w*");
         Matcher matcher11 = ptrn11.matcher(modelToParse.text());
         if (matcher11.find()) {
             String toRemove = matcher11.group(0);
+            System.out.println(toRemove);
             model = modelToParse.text().replace(toRemove, "").replace(" Суперцена!!!", "").trim();
         }
         return model;
@@ -169,20 +171,19 @@ public class ParserServiceSubsidiary {
         options.setExperimentalOption("prefs", prefs);
 
         System.out.println("LOGSYSTEM: 1");
-//        URL url = null;
-//        try {
+        URL url = null;
+        try {
 //            url = new URL("http://selenium:4444/wd/hub");
-//            url = new URL("http://localhost:4444/wd/hub");
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-
-
+            url = new URL("http://localhost:4444/wd/hub");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 //        WebDriver driver = new RemoteWebDriver(url, options);
 
 
 
         // START OF TEST CODE
+
 //        String GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/google-chrome";
 
 //        options.setBinary(GOOGLE_CHROME_BIN);
@@ -193,12 +194,11 @@ public class ParserServiceSubsidiary {
 
         // END OF TEST CODE
 
-        System.out.println("LOGSYSTEM: 2");
-        driver.manage().window().maximize();
 
+
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driver.get(urlToParse);
-
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         for (int i = 0; i < 25; i++) {
@@ -208,10 +208,9 @@ public class ParserServiceSubsidiary {
                 e.printStackTrace();
             }
 
-//            driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
+            driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
             js.executeScript("window.scrollBy(0,500)");
         }
-
 
         List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
 
@@ -228,9 +227,6 @@ public class ParserServiceSubsidiary {
         }
 
         driver.close();
-
-        System.out.println("LOGSYSTEM: 3");
-        pathes.forEach(s -> System.out.println("Photo: " + s));
 
         return pathes;
     }
