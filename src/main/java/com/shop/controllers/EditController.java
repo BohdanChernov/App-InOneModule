@@ -54,6 +54,11 @@ public class EditController {
     @GetMapping("/delete")
     public String deleteLaptop(@RequestParam String model, @RequestParam String manufacturer){
         Optional<Laptop> laptop = daoLaptopInterface.findFirstByLaptopManufacturerAndModel(new LaptopManufacturer(manufacturer), model);
+
+        Optional<List<LaptopPhoto>> photos = daoLaptopPhotos.findAllByPhotoOwner(laptop.get());
+
+        photos.get().forEach(laptopPhoto -> daoLaptopPhotos.delete(laptopPhoto));
+
         daoLaptopInterface.delete(laptop.get());
         deleteEmptyCharacteristics.checkAllFields();
         return "redirect:/laptops";
