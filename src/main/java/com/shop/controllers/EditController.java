@@ -52,8 +52,8 @@ public class EditController {
     }
 
     @GetMapping("/delete")
-    public String deleteLaptop(@RequestParam String model){
-        Optional<Laptop> laptop = daoLaptopInterface.findByModel(model);
+    public String deleteLaptop(@RequestParam String model, @RequestParam String manufacturer){
+        Optional<Laptop> laptop = daoLaptopInterface.findByLaptopManufacturerAndModel(new LaptopManufacturer(manufacturer), model);
         daoLaptopInterface.delete(laptop.get());
         deleteEmptyCharacteristics.checkAllFields();
         return "laptops";
