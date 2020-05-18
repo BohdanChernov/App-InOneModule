@@ -230,6 +230,7 @@ public class ParserServiceSubsidiary {
         driver.close();
 
         System.out.println("LOGSYSTEM: 3");
+        pathes.forEach(s -> System.out.println(s));
 
         return pathes;
     }
