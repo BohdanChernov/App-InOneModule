@@ -31,12 +31,13 @@ public class ParserControllerRest {
     @ResponseBody
     public ResponseEntity<Laptop> postParser(ModelMap modelMap, @RequestParam String url) {
         Laptop laptop = parserService.getMapCharacteristics(url);
-        System.out.println(laptop);
+        System.out.println("LAPTOP: " + laptop);
         List<LaptopPhoto> photos = parserService.getListPhotos(url, laptop);
-        System.out.println(photos);
+        System.out.println("PHOTOS: " + photos);
         laptop.setPhoto(photos);
         modelMap.addAttribute("laptop", laptop);
         ResponseEntity<Laptop> responseEntity = new ResponseEntity<Laptop>(laptop, HttpStatus.OK);
+        System.out.println("SYSTEMLOG: 4");
         return responseEntity;
     }
 
