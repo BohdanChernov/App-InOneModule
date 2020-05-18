@@ -245,9 +245,24 @@ public class ParserServiceSubsidiary {
             js.executeScript("window.scrollBy(0,500)");
         }
 
-//        List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
-        List<WebElement> list = driver.findElements(By.tagName("html"));
-        System.out.println(list);
+        List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
+        List<WebElement> list1 = driver.findElements(By.tagName("html"));
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println(list1);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
         for (WebElement webElement : list) {
             String path = webElement.getAttribute("src");
             pathes.add(path);
