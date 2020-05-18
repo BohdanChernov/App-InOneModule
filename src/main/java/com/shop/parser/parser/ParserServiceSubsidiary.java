@@ -58,15 +58,17 @@ public class ParserServiceSubsidiary {
 
         Elements scriptElements = document.getElementsByTag("script");
 
+        System.out.println(document);
+
 
         String priceToParse = null;
         for (Element element :scriptElements ){
             for (DataNode node : element.dataNodes()) {
                 String string = node.getWholeData();
-                System.out.println(string);
-                System.out.println();
-                System.out.println();
-                System.out.println("--------------------------------------------------------");
+//                System.out.println(string);
+//                System.out.println();
+//                System.out.println();
+//                System.out.println("--------------------------------------------------------");
                 if (string.contains("productPriceLocal")){
                     priceToParse = string;
                     break;
