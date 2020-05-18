@@ -178,9 +178,9 @@ public class ParserServiceSubsidiary {
 
 //        WebDriver driver = new RemoteWebDriver(url, options);
 
-        String GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/google-chrome";
+//        String GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/google-chrome";
 
-        options.setBinary(GOOGLE_CHROME_BIN);
+//        options.setBinary(GOOGLE_CHROME_BIN);
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
