@@ -78,12 +78,13 @@ public class ParserServiceSubsidiary {
 //        Matcher matcher9 = ptrn9.matcher(priceToParse.text());
 
         System.out.println(priceToParse);
-        Pattern ptrn9 = Pattern.compile("productPriceLocal:\\d");
+        Pattern ptrn9 = Pattern.compile("\"productPriceLocal\":\"\\d+");
         Matcher matcher9 = ptrn9.matcher(priceToParse);
 
 
         if (matcher9.find()) {
             price = matcher9.group(0).trim().replace(" ", "");
+            System.out.println("PRICE TEMP: " + price);
         }
 
 //        System.out.println(document);
