@@ -44,36 +44,23 @@ public class ParserServiceSubsidiary {
         Matcher matcher11 = ptrn11.matcher(modelToParse.text());
         if (matcher11.find()) {
             String toRemove = matcher11.group(0);
-            System.out.println(toRemove);
             model = modelToParse.text().replace(toRemove, "").replace(" Суперцена!!!", "").trim();
         }
 
-        System.out.println("MODEL:" + model);
         return model;
     }
 
     public String findPrice() {
         String price = "0";
-
-
         Elements scriptElements = document.getElementsByTag("script");
-
-        System.out.println(document);
-
-
         String priceToParse = null;
         for (Element element : scriptElements) {
             for (DataNode node : element.dataNodes()) {
                 String string = node.getWholeData();
-//                System.out.println(string);
-//                System.out.println();
-//                System.out.println();
-//                System.out.println("--------------------------------------------------------");
                 if (string.contains("productPriceLocal")) {
                     priceToParse = string;
                     break;
                 }
-
             }
         }
 
@@ -82,21 +69,14 @@ public class ParserServiceSubsidiary {
 //        Pattern ptrn9 = Pattern.compile("\\w[^\\₴]*");
 //        Matcher matcher9 = ptrn9.matcher(priceToParse.text());
 
-        System.out.println(priceToParse);
         Pattern ptrn9 = Pattern.compile("\"productPriceLocal\":\"\\d+");
         Matcher matcher9 = ptrn9.matcher(priceToParse);
-
 
         if (matcher9.find()) {
             price = matcher9.group(0).trim().replace(" ", "");
             price = price.replaceAll("\"productPriceLocal\":\"", "");
-//            price.replace("productPriceLocal", "");
-            System.out.println("PRICE TEMP: " + price);
         }
 
-//        System.out.println(document);
-
-        System.out.println("PRICE: " + price);
         return price;
     }
 
@@ -109,7 +89,6 @@ public class ParserServiceSubsidiary {
             displayDiagonal = matcher1.group(0).replace("\"", "");
         }
 
-        System.out.println("DIAGONAL: " + displayDiagonal);
         return displayDiagonal;
     }
 
@@ -127,7 +106,6 @@ public class ParserServiceSubsidiary {
                 displayResolution = matcher3.group(0).replace("х","x");
         }
 
-        System.out.println("RESOLUTION: " + displayResolution);
         return displayResolution;
     }
 
@@ -140,7 +118,6 @@ public class ParserServiceSubsidiary {
             displayType = matcher8.group(0).trim();
         }
 
-        System.out.println("DISPLAYTYPE: " + displayType);
         return displayType;
     }
 
@@ -154,7 +131,6 @@ public class ParserServiceSubsidiary {
             manufacturer = matcher10.group(0);
         }
 
-        System.out.println("MANUFACTURER: " + manufacturer);
         return manufacturer;
     }
 
@@ -167,7 +143,6 @@ public class ParserServiceSubsidiary {
             processorType = matcher3.group(0).trim();
         }
 
-        System.out.println("PROCESSOR: " + processorType);
         return processorType;
     }
 
@@ -180,7 +155,6 @@ public class ParserServiceSubsidiary {
             ramSize = matcher4.group(0);
         }
 
-        System.out.println("RAMSIZE: " + ramSize);
         return ramSize;
     }
 
@@ -193,7 +167,6 @@ public class ParserServiceSubsidiary {
             ramType = matcher7.group(0);
         }
 
-        System.out.println("RAMTYPE: " + ramType);
         return ramType;
     }
 
@@ -206,7 +179,6 @@ public class ParserServiceSubsidiary {
             storageSize = matcher6.group(0);
         }
 
-        System.out.println("STORAGESIZE: " + storageSize);
         return storageSize;
     }
 
@@ -219,7 +191,6 @@ public class ParserServiceSubsidiary {
             storageType = matcher5.group(0).trim();
         }
 
-        System.out.println("STORAGETYPE: " + storageType);
         return storageType;
     }
 
@@ -274,8 +245,9 @@ public class ParserServiceSubsidiary {
             js.executeScript("window.scrollBy(0,500)");
         }
 
-        List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
-
+//        List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
+        List<WebElement> list = driver.findElements(By.tagName("html"));
+        System.out.println(list);
         for (WebElement webElement : list) {
             String path = webElement.getAttribute("src");
             pathes.add(path);

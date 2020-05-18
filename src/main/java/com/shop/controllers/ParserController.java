@@ -61,7 +61,7 @@ public class ParserController {
             }
         });
 
-        return "parser";
+        return "redirect:laptops";
     }
 
 
