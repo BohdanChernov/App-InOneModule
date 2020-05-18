@@ -46,18 +46,19 @@ public class EditController {
     private DeleteEmptyCharacteristics deleteEmptyCharacteristics;
 
     @GetMapping("/clear")
-    public String clearCharacteristics(){
+    public String clearCharacteristics() {
         deleteEmptyCharacteristics.checkAllFields();
         return "edit";
     }
 
     @GetMapping("/delete")
-    public String deleteLaptop(@RequestParam String model, @RequestParam String manufacturer){
+    public String deleteLaptop(@RequestParam String model, @RequestParam String manufacturer) {
         Optional<Laptop> laptop = daoLaptopInterface.findFirstByLaptopManufacturerAndModel(new LaptopManufacturer(manufacturer), model);
 
         Optional<List<LaptopPhoto>> photos = daoLaptopPhotos.findAllByPhotoOwner(laptop.get());
 
-        photos.get().forEach(laptopPhoto -> daoLaptopPhotos.delete(laptopPhoto));
+        if (!photos.isEmpty())
+            photos.get().forEach(laptopPhoto -> daoLaptopPhotos.delete(laptopPhoto));
 
         daoLaptopInterface.delete(laptop.get());
         deleteEmptyCharacteristics.checkAllFields();
@@ -77,7 +78,7 @@ public class EditController {
         Laptop laptop = daoLaptopInterface.findByModel(laptopModel).get();
 
 
-        if(modelOflaptop!=null){
+        if (modelOflaptop != null) {
             laptop.setModel(modelOflaptop);
         }
 
@@ -86,57 +87,57 @@ public class EditController {
             laptop.setLaptopManufacturer(laptopManufacturerNew);
         }
 
-        if(processor!=null){
+        if (processor != null) {
             ProcessorType processorTypeNew = daoProcessorType.save(new ProcessorType(processor));
             laptop.setProcessorType(processorTypeNew);
         }
 
-        if (price!=null){
+        if (price != null) {
             String string = price.replaceAll("[^0-9\\.]", "");
             laptop.setPrice(Integer.parseInt(string));
         }
 
 
-        if (displayDiagonal!=null){
+        if (displayDiagonal != null) {
             DisplayDiagonal displayDiagonalNew = daoDisplayDiagonal.save(new DisplayDiagonal(displayDiagonal));
             laptop.setDisplayDiagonal(displayDiagonalNew);
         }
 
-        if(displayResolution!=null){
+        if (displayResolution != null) {
             DisplayResolution displayResolutionNew = daoDisplayResolution.save(new DisplayResolution(displayResolution));
             laptop.setDisplayResolution(displayResolutionNew);
         }
 
-        if(displayType!=null){
+        if (displayType != null) {
             DisplayType displayTypeNew = daoDisplayType.save(new DisplayType(displayType));
             laptop.setDisplayType(displayTypeNew);
         }
 
 
-        if (ramSize!=null) {
+        if (ramSize != null) {
             RAMSize ramSizeNew = daoramSize.save(new RAMSize(ramSize));
             laptop.setRamSize(ramSizeNew);
         }
 
-        if (ramType !=null) {
+        if (ramType != null) {
             RAMType ramTypeNew = daoramType.save(new RAMType(ramType));
             laptop.setRamType(ramTypeNew);
         }
 
 
-        if (storageType!=null) {
+        if (storageType != null) {
             StorageType storageTypeNew = daoStorageType.save(new StorageType(storageType));
             laptop.setStorageType(storageTypeNew);
         }
 
 
-        if (storageSize!=null) {
+        if (storageSize != null) {
             StorageSize storageSizeNew = daoStorageSize.save(new StorageSize(storageSize));
             laptop.setStorageSize(storageSizeNew);
         }
 
 
-            daoLaptopInterface.save(laptop);
+        daoLaptopInterface.save(laptop);
 
         deleteEmptyCharacteristics.checkAllFields();
 

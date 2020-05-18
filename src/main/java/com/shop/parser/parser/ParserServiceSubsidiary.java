@@ -167,6 +167,9 @@ public class ParserServiceSubsidiary {
             ramType = matcher7.group(0);
         }
 
+        if(ramType.equals("") || ramType.equals(" "))
+            ramType = "no information";
+
         return ramType;
     }
 
@@ -178,6 +181,9 @@ public class ParserServiceSubsidiary {
         if (matcher6.find()) {
             storageSize = matcher6.group(0);
         }
+
+        if(storageSize.equals("") || storageSize.equals(" "))
+            storageSize = "no information";
 
         return storageSize;
     }
@@ -215,19 +221,7 @@ public class ParserServiceSubsidiary {
         }
 //        WebDriver driver = new RemoteWebDriver(url, options);
 
-
-        // START OF TEST CODE
-
-//        String GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/google-chrome";
-
-//        options.setBinary(GOOGLE_CHROME_BIN);
-//        options.addArguments("--headless");
-//        options.addArguments("--no-sandbox");
-//        options.addArguments("--disable-dev-shm-usage");
         WebDriver driver = new ChromeDriver(options);
-
-        // END OF TEST CODE
-
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
@@ -245,8 +239,6 @@ public class ParserServiceSubsidiary {
         }
 
 //        List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
-
-
 
         List<WebElement> checkList = driver.findElements(By.tagName("img"));
         for (WebElement webElement : checkList) {
