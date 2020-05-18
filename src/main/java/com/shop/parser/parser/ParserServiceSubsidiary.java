@@ -241,6 +241,13 @@ public class ParserServiceSubsidiary {
                 e.printStackTrace();
             }
 
+            System.out.println("SCROLL");
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println();
+
             driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
             js.executeScript("window.scrollBy(0,500)");
         }
@@ -249,7 +256,7 @@ public class ParserServiceSubsidiary {
 
 
 
-        WebElement checkList = driver.findElement(By.tagName("html"));
+        List<WebElement> checkList = driver.findElements(By.tagName("img"));
 
         System.out.println();
         System.out.println();
@@ -260,11 +267,12 @@ public class ParserServiceSubsidiary {
         System.out.println();
         System.out.println();
         System.out.println();
-//        for (WebElement webElement : checkList) {
-//            System.out.println(webElement.getText());
-//        }
+        for (WebElement webElement : checkList) {
+            System.out.println(webElement.getText());
+        }
 
         System.out.println(checkList.toString());
+        System.out.println(list.toString());
         System.out.println();
         System.out.println();
         System.out.println();
