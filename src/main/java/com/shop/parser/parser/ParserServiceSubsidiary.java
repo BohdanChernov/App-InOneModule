@@ -85,6 +85,7 @@ public class ParserServiceSubsidiary {
         if (matcher9.find()) {
             price = matcher9.group(0).trim().replace(" ", "");
             price.replaceAll("\"productPriceLocal\":\"", "");
+            price.replace("productPriceLocal", "");
             System.out.println("PRICE TEMP: " + price);
         }
 
