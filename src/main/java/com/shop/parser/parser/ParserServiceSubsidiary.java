@@ -253,6 +253,7 @@ public class ParserServiceSubsidiary {
             String imageSrc = webElement.getAttribute("src");
             if (imageSrc.contains("rozetka.ua/goods/")) {
                 String path = webElement.getAttribute("src");
+                System.out.println(path);
                 pathes.add(path);
             }
         }
