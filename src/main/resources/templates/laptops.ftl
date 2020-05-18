@@ -157,7 +157,7 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-sm navbar-dark">
+        <nav class="navbar navbar-expand-md navbar-dark">
 
             <span><a id="logo" href="/">Laptops to GO</a></span>
 

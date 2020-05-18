@@ -27,7 +27,7 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-sm navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark">
 
         <span><a id="logo" href="/">Laptops to GO</a></span>
 
@@ -115,7 +115,7 @@
 </main>
 
 <footer class="footer">
-    <nav class="navbar navbar-expand-sm navbar-dark" id="footer">
+    <nav class="navbar navbar-expand-md navbar-dark" id="footer">
 
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
                 data-target="#navbarNavDropdown"
