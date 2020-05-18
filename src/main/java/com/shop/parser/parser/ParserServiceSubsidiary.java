@@ -177,8 +177,10 @@ public class ParserServiceSubsidiary {
 
 
 //        WebDriver driver = new RemoteWebDriver(url, options);
+        options.setBinary("/app/.apt/usr/bin/google_chrome");
 
         WebDriver driver = new ChromeDriver(options);
+
 
         driver.manage().window().maximize();
 
