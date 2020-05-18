@@ -38,6 +38,8 @@ public class ParserServiceSubsidiary {
         String model = "no information";
 //        Elements modelToParse = document.select("span.product-tabs__heading_color_gray");
         Elements modelToParse = document.select("product__title");
+        System.out.println("DOCUMENT:!!!!");
+        System.out.println(document);
         System.out.println("HERE");
         System.out.println(modelToParse);
         System.out.println(modelToParse.text());
