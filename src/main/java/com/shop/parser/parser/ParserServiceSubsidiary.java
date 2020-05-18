@@ -58,18 +58,29 @@ public class ParserServiceSubsidiary {
 
         Elements scriptElements = document.getElementsByTag("script");
 
+
+        String priceToParse = null;
         for (Element element :scriptElements ){
             for (DataNode node : element.dataNodes()) {
-                System.out.println(node.getWholeData());
+                String string = node.getWholeData();
+                if (string.contains("productPriceLocal")){
+                    priceToParse = string;
+                    break;
+                }
+
             }
-            System.out.println("-------------------");
         }
 
 
 
-        Elements priceToParse = document.select("p.product-carriage__price");
-        Pattern ptrn9 = Pattern.compile("\\w[^\\₴]*");
-        Matcher matcher9 = ptrn9.matcher(priceToParse.text());
+//        Elements priceToParse = document.select("p.product-carriage__price");
+//        Pattern ptrn9 = Pattern.compile("\\w[^\\₴]*");
+//        Matcher matcher9 = ptrn9.matcher(priceToParse.text());
+
+        Pattern ptrn9 = Pattern.compile("productPriceLocal:\\d");
+        Matcher matcher9 = ptrn9.matcher(priceToParse);
+
+
         if (matcher9.find()) {
             price = matcher9.group(0).trim().replace(" ", "");
         }
