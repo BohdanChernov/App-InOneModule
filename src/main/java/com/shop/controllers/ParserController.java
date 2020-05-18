@@ -67,7 +67,8 @@ public class ParserController {
 
     public void parseLaptop(String url) {
 
-        final String parserUrl = "http://localhost:8080/parserRest";
+//        final String parserUrl = "http://localhost:8080/parserRest";
+        final String parserUrl = "https://app-shop-all-modules.herokuapp.com/parserRest";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
