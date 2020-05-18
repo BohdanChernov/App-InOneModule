@@ -33,10 +33,10 @@
 
 <#if totalPrice?has_content>
     <div class="row" id="basketRowLast">
-        <span class="col-12 col-sm-6 col-md-6 col-lg-4 align-self-center"></span>
-        <span class="col-12 col-sm-6 col-md-6 col-lg-2 align-self-center"></span>
-        <span class="col-12 col-sm-6 col-md-6 col-lg-3 align-self-center">СУММА: </span>
-        <span class="col-12 col-sm-3 col-md-3 col-lg-1 align-self-center">${totalPrice} UAH</span>
-        <span class="col-12 col-sm-3 col-md-3 col-lg-2 align-self-center"><button class="btn btn-success">Оплатить</button></span>
+        <span class="col-6 col-sm-6 col-md-6 col-lg-4 align-self-center"></span>
+        <span class="col-6 col-sm-6 col-md-6 col-lg-2 align-self-center"></span>
+        <span class="col-4 col-sm-6 col-md-6 col-lg-3 align-self-center">СУММА: </span>
+        <span class="col-4 col-sm-3 col-md-3 col-lg-1 align-self-center">${totalPrice} UAH</span>
+        <span class="col-4 col-sm-3 col-md-3 col-lg-2 align-self-center"><button class="btn btn-success">Оплатить</button></span>
     </div>
 </#if>
