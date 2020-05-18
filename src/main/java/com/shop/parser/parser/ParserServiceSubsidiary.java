@@ -116,16 +116,15 @@ public class ParserServiceSubsidiary {
     public String findDisplayResolution() {
         String displayResolution = "no information";
         Elements diagonalAndResolution = document.select("a[href*=20861]");
-        System.out.println("CSSSSSSSSSSSSSSSSSSSSSSSSSSSS" + diagonalAndResolution.text());
         Pattern ptrn2 = Pattern.compile("\\d*[x]\\d*");
         Pattern ptrn3 = Pattern.compile("\\d*[х]\\d*");
         Matcher matcher2 = ptrn2.matcher(diagonalAndResolution.text());
         Matcher matcher3 = ptrn3.matcher(diagonalAndResolution.text());
         if (matcher2.find()) {
-            displayResolution = matcher2.group(0);
+            displayResolution = matcher2.group(0).replace("х", "x");
         } else {
             if (matcher3.find())
-                displayResolution = matcher3.group(0);
+                displayResolution = matcher3.group(0).replace("х","x");
         }
 
         System.out.println("RESOLUTION: " + displayResolution);
