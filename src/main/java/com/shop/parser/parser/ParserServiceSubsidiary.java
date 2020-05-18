@@ -37,10 +37,10 @@ public class ParserServiceSubsidiary {
     public String findModel() {
         String model = "no information";
 //        Elements modelToParse = document.select("span.product-tabs__heading_color_gray");
-        Elements modelToParse = document.select("detail-title h1");
+        Elements modelToParse = document.select("h2.detail-title");
         System.out.println("DOCUMENT:!!!!");
-        System.out.println(document);
-        System.out.println("HERE");
+//        System.out.println(document);
+//        System.out.println("HERE");
         System.out.println(modelToParse);
         System.out.println(modelToParse.text());
         Pattern ptrn11 = Pattern.compile("^Ноутбук\\s\\w*");
