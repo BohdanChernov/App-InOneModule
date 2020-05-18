@@ -1,6 +1,8 @@
 package com.shop.parser.parser;
 
+import org.jsoup.nodes.DataNode;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -54,15 +56,14 @@ public class ParserServiceSubsidiary {
         String price = "0";
 
 
-//        Document doc =Jsoup.connect("http://stackoverflow.com/questions/16780517/java-obtain-text-within-script-tag-using-jsoup").timeout(10000).get();
-//        Elements scriptElements = doc.getElementsByTag("script");
-//
-//        for (Element element :scriptElements ){
-//            for (DataNode node : element.dataNodes()) {
-//                System.out.println(node.getWholeData());
-//            }
-//            System.out.println("-------------------");
-//        }
+        Elements scriptElements = document.getElementsByTag("script");
+
+        for (Element element :scriptElements ){
+            for (DataNode node : element.dataNodes()) {
+                System.out.println(node.getWholeData());
+            }
+            System.out.println("-------------------");
+        }
 
 
 
@@ -73,7 +74,7 @@ public class ParserServiceSubsidiary {
             price = matcher9.group(0).trim().replace(" ", "");
         }
 
-        System.out.println(document);
+//        System.out.println(document);
 
         System.out.println("PRICE: " + price);
         return price;
