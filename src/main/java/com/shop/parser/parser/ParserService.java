@@ -20,7 +20,7 @@ public class ParserService {
             String forCharacteristics = url.concat("characteristics/");
             Document document = Jsoup.connect(forCharacteristics)
                     .userAgent("Chrome/81.0.4044.113")
-                    .referrer("http:www.google.com").get();
+                    .referrer("http:www.google.com").timeout(10000).get();
 
             ParserServiceSubsidiary parserService = new ParserServiceSubsidiary(document);
 

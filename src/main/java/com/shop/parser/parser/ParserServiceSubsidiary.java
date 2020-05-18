@@ -52,6 +52,20 @@ public class ParserServiceSubsidiary {
 
     public String findPrice() {
         String price = "0";
+
+
+//        Document doc =Jsoup.connect("http://stackoverflow.com/questions/16780517/java-obtain-text-within-script-tag-using-jsoup").timeout(10000).get();
+//        Elements scriptElements = doc.getElementsByTag("script");
+//
+//        for (Element element :scriptElements ){
+//            for (DataNode node : element.dataNodes()) {
+//                System.out.println(node.getWholeData());
+//            }
+//            System.out.println("-------------------");
+//        }
+
+
+
         Elements priceToParse = document.select("p.product-carriage__price");
         Pattern ptrn9 = Pattern.compile("\\w[^\\₴]*");
         Matcher matcher9 = ptrn9.matcher(priceToParse.text());
@@ -106,7 +120,8 @@ public class ParserServiceSubsidiary {
 
     public String findManufacturer() {
         String manufacturer = "no information";
-        Elements brandToPars = document.select("span.product-tabs__heading_color_gray");
+//        Elements brandToPars = document.select("span.product-tabs__heading_color_gray");
+        Elements brandToPars = document.select("h2.detail-title");
         Pattern ptrn10 = Pattern.compile("\\w+");
         Matcher matcher10 = ptrn10.matcher(brandToPars.text());
         if (matcher10.find()) {
