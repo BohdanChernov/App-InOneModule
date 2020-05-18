@@ -130,7 +130,6 @@ public class ParserServiceSubsidiary {
             processorType = matcher3.group(0).trim();
         }
 
-
         System.out.println(processor);
         System.out.println(processor.text());
         System.out.println("PROCESSOR: " + processorType);
