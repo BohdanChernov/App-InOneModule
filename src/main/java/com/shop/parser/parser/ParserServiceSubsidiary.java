@@ -181,6 +181,10 @@ public class ParserServiceSubsidiary {
         String GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/google-chrome";
 
         options.setBinary(GOOGLE_CHROME_BIN);
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
 
         WebDriver driver = new ChromeDriver(options);
 
