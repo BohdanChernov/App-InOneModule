@@ -167,28 +167,33 @@ public class ParserServiceSubsidiary {
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
-        URL url = null;
-        try {
+
+        System.out.println("LOGSYSTEM: 1");
+//        URL url = null;
+//        try {
 //            url = new URL("http://selenium:4444/wd/hub");
-            url = new URL("http://localhost:4444/wd/hub");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+//            url = new URL("http://localhost:4444/wd/hub");
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
 
 
 //        WebDriver driver = new RemoteWebDriver(url, options);
 
+
+
+        // START OF TEST CODE
 //        String GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/google-chrome";
 
 //        options.setBinary(GOOGLE_CHROME_BIN);
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-
-
         WebDriver driver = new ChromeDriver(options);
 
+        // END OF TEST CODE
 
+        System.out.println("LOGSYSTEM: 2");
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
@@ -223,6 +228,8 @@ public class ParserServiceSubsidiary {
         }
 
         driver.close();
+
+        System.out.println("LOGSYSTEM: 3");
 
         return pathes;
     }
