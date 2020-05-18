@@ -53,10 +53,10 @@ public class EditController {
 
     @GetMapping("/delete")
     public String deleteLaptop(@RequestParam String model, @RequestParam String manufacturer){
-        Optional<Laptop> laptop = daoLaptopInterface.findByLaptopManufacturerAndModel(new LaptopManufacturer(manufacturer), model);
+        Optional<Laptop> laptop = daoLaptopInterface.findFirstByLaptopManufacturerAndModel(new LaptopManufacturer(manufacturer), model);
         daoLaptopInterface.delete(laptop.get());
         deleteEmptyCharacteristics.checkAllFields();
-        return "laptops";
+        return "redirect:/laptops";
     }
 
     @GetMapping("/edit")
@@ -70,6 +70,7 @@ public class EditController {
                                @RequestParam(required = false) String displayType, @RequestParam(required = false) String ramSize, @RequestParam(required = false) String ramType, @RequestParam(required = false) String storageType,
                                @RequestParam(required = false) String storageSize, @RequestParam(required = false) String price) {
         Laptop laptop = daoLaptopInterface.findByModel(laptopModel).get();
+
 
         if(modelOflaptop!=null){
             laptop.setModel(modelOflaptop);
@@ -128,6 +129,7 @@ public class EditController {
             StorageSize storageSizeNew = daoStorageSize.save(new StorageSize(storageSize));
             laptop.setStorageSize(storageSizeNew);
         }
+
 
             daoLaptopInterface.save(laptop);
 

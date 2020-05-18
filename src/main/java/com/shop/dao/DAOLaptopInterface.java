@@ -22,4 +22,5 @@ public interface DAOLaptopInterface extends JpaRepository<Laptop, Long>, JpaSpec
     Optional<List<Laptop>> findAllByRamType(RAMType ramType);
     Optional<List<Laptop>> findAllByStorageSize(StorageSize storageSize);
     Optional<List<Laptop>> findAllByStorageType(StorageType storageType);
+    Optional<Laptop> findFirstByLaptopManufacturerAndModel(LaptopManufacturer manufacturer, String model);
 }
