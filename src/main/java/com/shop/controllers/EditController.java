@@ -52,10 +52,11 @@ public class EditController {
     }
 
     @GetMapping("/delete")
-    public void deleteLaptop(@RequestParam String model){
-        Optional<Laptop> laptop = daoLaptopInterface.findById(Long.parseLong(model));
+    public String deleteLaptop(@RequestParam String model){
+        Optional<Laptop> laptop = daoLaptopInterface.findByModel(model);
         daoLaptopInterface.delete(laptop.get());
         deleteEmptyCharacteristics.checkAllFields();
+        return "laptops";
     }
 
     @GetMapping("/edit")
