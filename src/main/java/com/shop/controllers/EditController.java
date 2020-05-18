@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class EditController {
@@ -48,6 +49,13 @@ public class EditController {
     public String clearCharacteristics(){
         deleteEmptyCharacteristics.checkAllFields();
         return "edit";
+    }
+
+    @GetMapping("/delete")
+    public void deleteLaptop(@RequestParam String model){
+        Optional<Laptop> laptop = daoLaptopInterface.findById(Long.parseLong(model));
+        daoLaptopInterface.delete(laptop.get());
+        deleteEmptyCharacteristics.checkAllFields();
     }
 
     @GetMapping("/edit")
