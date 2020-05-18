@@ -62,31 +62,27 @@
     </main>
 
     <footer class="footer">
-        <nav class="navbar navbar-expand-lg m-0 p-0" id="footer">
-            <ul class="navbar-nav ml-auto">
-                <div class="form-inline">
-                    <li class="nav-item">
-                        <a class="btn btn-light" id="footerButton" href="/login">Вход администратора</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" id="footerButton" href="/edit">Редактирование товаров</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" id="footerButton" href="/parser">Парсер товаров</a>
-                    </li>
+        <nav class="navbar navbar-expand-sm navbar-dark" id="footer">
 
-                    <li class="nav-item">
-                        <a class="btn btn-light" id="footerButton" href="/contacts">Контакты</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" id="footerButton" href="/delivery">Условия доставки</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" id="footerButton" href="/feedback">Обратная
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse pt-2" id="navbarNavDropdown">
+                <div class="form-inline ml-auto">
+                    <ul class="navbar-nav">
+                        <a class="btn btn-light mt-2" id="footerButton" href="/login">Вход администратора</a>
+                        <a class="btn btn-light mt-2" id="footerButton" href="/edit">Редактирование товаров</a>
+                        <a class="btn btn-light mt-2" id="footerButton" href="/parser">Парсер товаров</a>
+                        <a class="btn btn-light mt-2" id="footerButton" href="/contacts">Контакты</a>
+                        <a class="btn btn-light mt-2" id="footerButton" href="/delivery">Условия доставки</a>
+                        <a class="btn btn-light mt-2" id="footerButton" href="/feedback">Обратная
                             связь</a>
-                    </li>
+                    </ul>
                 </div>
-            </ul>
+            </div>
         </nav>
     </footer>
 
