@@ -240,51 +240,29 @@ public class ParserServiceSubsidiary {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            System.out.println("SCROLL");
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
-
             driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
             js.executeScript("window.scrollBy(0,500)");
         }
 
-        List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
+//        List<WebElement> list = driver.findElements(By.className("product-photos__picture"));
 
 
 
         List<WebElement> checkList = driver.findElements(By.tagName("img"));
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
         for (WebElement webElement : checkList) {
-            System.out.println(webElement.getAttribute("src"));
+            String imageSrc = webElement.getAttribute("src");
+            if (imageSrc.contains("rozetka.ua/goods/")) {
+                String path = webElement.getAttribute("src");
+                pathes.add(path);
+            }
         }
 
-//        System.out.println(checkList.toString());
-//        System.out.println(list.toString());
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        for (WebElement webElement : list) {
-            String path = webElement.getAttribute("src");
-            pathes.add(path);
-        }
+
+
+//        for (WebElement webElement : list) {
+//            String path = webElement.getAttribute("src");
+//            pathes.add(path);
+//        }
 
         for (String s : pathes) {
             if (s.endsWith(".svg")) {
