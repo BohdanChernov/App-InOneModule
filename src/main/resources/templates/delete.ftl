@@ -46,9 +46,8 @@
             <div class="form-group row" style="background-color:#0093c4; padding: 5px">
                 <label class="col-5 col-form-label">Введите производителя нотбука для удаления:</label>
                 <input class="col-5 form-control" type="text" name="manufacturer">
-                <button type="submit" class="btn btn-outline-secondary mb-2">Удалить</button>
             </div>
-            <div class="form-group row" style="background-color:#0093c4; padding: 5px">
+            <div class="form-group row">
                 <button type="submit" class="btn btn-outline-secondary mb-2">Удалить</button>
             </div>
 
