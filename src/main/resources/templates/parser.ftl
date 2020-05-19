@@ -38,6 +38,9 @@
 
 
             <div class="row my-1 d-flex justify-content-center">
+                Вписывать ссылку вида: https://rozetka.com.ua/hp_8kg97ea/p202605541/
+                <br>
+
                 <form class="form-inline" method="post" action="/parser">
                     <div class="col-auto">
                         <input class="form-control mb-2" placeholder="URL" name="laptopLinks"><br>
@@ -75,6 +78,7 @@
                     <ul class="navbar-nav">
                         <a class="btn btn-light mt-2" id="footerButton" href="/login">Вход администратора</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/edit">Редактирование товаров</a>
+                        <a class="btn btn-light mt-2" id="footerButton" href="/delete">Удаление товаров</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/parser">Парсер товаров</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/contacts">Контакты</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/delivery">Условия доставки</a>

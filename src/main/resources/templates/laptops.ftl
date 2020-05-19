@@ -458,6 +458,7 @@
                     <ul class="navbar-nav">
                         <a class="btn btn-light mt-2" id="footerButton" href="/login">Вход администратора</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/edit">Редактирование товаров</a>
+                        <a class="btn btn-light mt-2" id="footerButton" href="/delete">Удаление товаров</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/parser">Парсер товаров</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/contacts">Контакты</a>
                         <a class="btn btn-light mt-2" id="footerButton" href="/delivery">Условия доставки</a>

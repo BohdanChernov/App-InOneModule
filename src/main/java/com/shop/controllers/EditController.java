@@ -51,7 +51,12 @@ public class EditController {
         return "edit";
     }
 
-    @GetMapping("/delete")
+    @GetMapping
+    public String getDeletePage() {
+        return "delete";
+    }
+
+    @PostMapping("/delete")
     public String deleteLaptop(@RequestParam String model, @RequestParam String manufacturer) {
         Optional<Laptop> laptop = daoLaptopInterface.findFirstByLaptopManufacturerAndModel(new LaptopManufacturer(manufacturer), model);
 
@@ -62,7 +67,7 @@ public class EditController {
 
         daoLaptopInterface.delete(laptop.get());
         deleteEmptyCharacteristics.checkAllFields();
-        return "redirect:/laptops";
+        return "delete";
     }
 
     @GetMapping("/edit")
@@ -79,7 +84,9 @@ public class EditController {
 
 
         if (modelOflaptop != null) {
-            laptop.setModel(modelOflaptop);
+            Optional<Laptop> laptopOptional = daoLaptopInterface.findByLaptopManufacturerAndModel(new LaptopManufacturer(manufacturer), modelOflaptop);
+            if (laptopOptional.isEmpty())
+                laptop.setModel(modelOflaptop);
         }
 
         if (manufacturer != null) {

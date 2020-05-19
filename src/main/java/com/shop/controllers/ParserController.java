@@ -85,7 +85,7 @@ public class ParserController {
 
         Optional<Laptop> laptopInDataBase = daoLaptopInterface.findByLaptopManufacturerAndModel(manufacturer, model);
 
-        if (laptopInDataBase.isEmpty()) {
+        if (laptopInDataBase.isEmpty() && laptop.getPhoto().size()>0) {
             daoDisplayDiagonal.save(laptop.getDisplayDiagonal());
             daoDisplayResolution.save(laptop.getDisplayResolution());
             daoDisplayType.save(laptop.getDisplayType());
