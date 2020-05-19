@@ -51,7 +51,7 @@ public class EditController {
         return "edit";
     }
 
-    @GetMapping
+    @GetMapping("/delete")
     public String getDeletePage() {
         return "delete";
     }

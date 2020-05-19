@@ -4,7 +4,7 @@
     <title>Laptops to GO</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon"/>
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css"
@@ -27,7 +27,7 @@
 
         <nav class="navbar navbar-expand-md navbar-dark">
 
-            <span ><a id="logo" href="/">Laptops to GO</a></span>
+            <span><a id="logo" href="/">Laptops to GO</a></span>
 
         </nav>
     </header>
@@ -38,11 +38,10 @@
 
 
             <div class="row my-1 d-flex justify-content-center">
-                Вписывать ссылку вида: https://rozetka.com.ua/hp_8kg97ea/p202605541/
-                <br>
 
                 <form class="form-inline" method="post" action="/parser">
                     <div class="col-auto">
+                        <span class="form-control mb-2" placeholder="URL" name="laptopLinks">Вписывать ссылку вида: https://rozetka.com.ua/hp_8kg97ea/p202605541</span><br>
                         <input class="form-control mb-2" placeholder="URL" name="laptopLinks"><br>
                         <input class="form-control mb-2" placeholder="URL" name="laptopLinks"><br>
                         <input class="form-control mb-2" placeholder="URL" name="laptopLinks"><br>
