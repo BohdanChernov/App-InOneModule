@@ -41,7 +41,7 @@
 
                 <form class="form-inline" method="post" action="/parser">
                     <div class="col-auto">
-                        <span class="form-control mb-2" placeholder="URL" name="laptopLinks">Вписывать ссылку вида: https://rozetka.com.ua/hp_8kg97ea/p202605541</span><br>
+                        <span class="form-control mb-2 align-content-center" placeholder="URL" name="laptopLinks">Вписывать ссылку вида: https://rozetka.com.ua/hp_8kg97ea/p202605541</span><br>
                         <input class="form-control mb-2" placeholder="URL" name="laptopLinks"><br>
                         <input class="form-control mb-2" placeholder="URL" name="laptopLinks"><br>
                         <input class="form-control mb-2" placeholder="URL" name="laptopLinks"><br>
